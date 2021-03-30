@@ -12,9 +12,12 @@
         <div class="conteudo">
             <div class="base-caixa">
                 <?php include "cabecalho.php" ?>
-                <?php $this->load($view, $viewData); ?> 
+                <section class="conteudo">
+                    <?php $this->load($view, $viewData); ?>
+                </section>
+                <?php include "rodape.php" ?>
             </div>
-            <?php include "rodape.php" ?>
+
         </div>
         <script src="https://kit.fontawesome.com/9480317a2f.js"></script>
         <script src="<?= URL_BASE ?>assets/js/jquery.min.js"></script>

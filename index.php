@@ -23,6 +23,3 @@ try {
     $erro = new Excecao($e);
     $erro->mostrar();
 }
-
-
-

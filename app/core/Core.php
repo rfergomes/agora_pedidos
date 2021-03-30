@@ -17,10 +17,9 @@ class Core{
            call_user_func_array(array($c, $this->getMetodo()), $this->getParametros()); 
        } catch (ArgumentCountError $e) {
            throw new Exception("Erro na linha: " . $e->getLine() ." do arquivo " . $e->getFile() ." <br> O número de argumentos passados não corresponde ao esperado <br><br>" );
-       }
-            
-        
+       }           
     }
+    
     public function verificaUri(){
         $url =explode("index.php", $_SERVER["PHP_SELF"]);
         $url = end($url);
