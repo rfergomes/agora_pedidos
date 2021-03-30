@@ -39,60 +39,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td align="center">2</td>
-                        <td align="center">02/04/2017</td>
-                        <td align="center">14:04:44</td>
-                        <td align="center">R$ 90.00</td>
-                        <td align="center"><i class="fas fa-window-close text-vermelho"></i> Não</td>
-                        <td align="center"><i class="fas fa-window-close text-vermelho"></i> Não</td>
-                        <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td align="center">02/04/2017</td>
-                        <td align="center">14:04:44</td>
-                        <td align="center">R$ 90.00</td>
-                        <td align="center"><i class="fas fa-window-close text-vermelho"></i> Não</td>
-                        <td align="center"><i class="fas fa-window-close text-vermelho"></i> Não</td>
-                        <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td align="center">02/04/2017</td>
-                        <td align="center">14:04:44</td>
-                        <td align="center">R$ 90.00</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td align="center">02/04/2017</td>
-                        <td align="center">14:04:44</td>
-                        <td align="center">R$ 90.00</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td align="center">02/04/2017</td>
-                        <td align="center">14:04:44</td>
-                        <td align="center">R$ 90.00</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
-                    </tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td align="center">02/04/2017</td>
-                        <td align="center">14:04:44</td>
-                        <td align="center">R$ 90.00</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><i class="fas fa-check text-verde"></i> Sim</td>
-                        <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
-                    </tr>
+                    <?php foreach ($lista as $pedido) { ?>
+                        <tr>
+                            <td align="center"><?= $pedido->id_pedido ?></td>
+                            <td align="center"><?= $pedido->data ?></td>
+                            <td align="center"><?= $pedido->hora ?></td>
+                            <td align="center">R$ <?= $pedido->total_pedido ?></td>
+                            <td align="center"><i class="fas fa-window-close text-vermelho"></i> <?= $pedido->liberado ?></td>
+                            <td align="center"><i class="fas fa-window-close text-vermelho"></i> <?= $pedido->finalizado ?></td>
+                            <td align="center"><a href="#" class="btn btn-outline-vermelho d-inline-block"><i class="fas fa-trash-alt"></i> Excluir</a></td>
+                        </tr>
+                    <?php } ?>                   
                 </tbody>
             </table>
         </div>

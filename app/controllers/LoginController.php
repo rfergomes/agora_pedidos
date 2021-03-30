@@ -7,14 +7,15 @@ use app\models\service\Service;
 
 class LoginController extends Controller{
     public function index(){
-        $this->load("Login/login");
+        $dados["view"] = "Login/login";
+        $this->load("Login/login", $dados);
     }
     public function logar(){
         $login = $_POST["email"];
         $senha = $_POST["senha"];
         
         Flash::setForm($_POST);
-        if( Service::logar("email", $login, $senha, "usuario")){
+        if( Service::logar("email", $login, $senha, "cliente")){
             $this->redirect(URL_BASE );
         }else{
             $this->redirect(URL_BASE ."login");

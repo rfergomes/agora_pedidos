@@ -1,3 +1,4 @@
+<script src="<?= URL_BASE ?>assets/js/js_pedido.js" type="text/javascript"></script>
 <div class="">
     <div class="width-100 d-flex">
         <div class="divisor border-bottom">

@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale= 1">
         <link rel="stylesheet" href="<?= URL_BASE ?>assets/css/auxiliar.css">
         <link rel="stylesheet" href="<?= URL_BASE ?>assets/css/grade.css">
-        <link rel="stylesheet" href="<?= URL_BASE ?>assets/css/style.css">	
+        <link rel="stylesheet" href="<?= URL_BASE ?>assets/css/style.css">
+        <script src="<?= URL_BASE ?>assets/js/jquery.min.js"></script>
     </head>
     <body>
         <div class="conteudo">
@@ -20,7 +21,6 @@
 
         </div>
         <script src="https://kit.fontawesome.com/9480317a2f.js"></script>
-        <script src="<?= URL_BASE ?>assets/js/jquery.min.js"></script>
         <script src="<?= URL_BASE ?>assets/js/js.js"></script>
     </body>
 </html>
