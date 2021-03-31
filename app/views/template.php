@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="<?= URL_BASE ?>assets/css/grade.css">
         <link rel="stylesheet" href="<?= URL_BASE ?>assets/css/style.css">
         <script src="<?= URL_BASE ?>assets/js/jquery.min.js"></script>
+        <script>var base_url = "<?= URL_BASE ?>"</script>
     </head>
     <body>
         <div class="conteudo">
