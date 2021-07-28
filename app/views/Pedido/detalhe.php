@@ -35,36 +35,8 @@
     </div>
     <div class="d-flex">
         <div class="base-home pt-3">
-            <span class="titulo pb-3 pt-3"><i class="far fa-list-alt"></i> Itens do pedido</span>
-            <?=
-            $this->verMsg();
-            $this->verErro();
-            ?>
-            <div class="formulario">
-                <form action="">
-                    <div class="rows p-3">
-                        <div class="col-6 position-relative">
-                            <div class="d-flex  text-justify-between items-center">
-                                <span class="text-label"> Produto</span>
-                            </div>
-                            <input type="text" id="produto" data-type="localizar_produto" class="form-campo" />
-
-                        </div>
-                        <div class="col-2">
-                            <span class="text-label">Quantidade</span>
-                            <input type="number" id="qtde" value="" class="form-campo">
-                        </div>
-                        <div class="col-2">
-                            <span class="text-label">Valor</span>
-                            <input type="text" id="valor" value="" class="form-campo">
-                        </div>
-                        <div class="col-2 mt-3 pt-2">
-                            <input type="hidden" id="id_produto">
-                            <input type="button" id="btInserir" value="Inserir" class="btn btn-azul width-100">
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <span class="titulo pb-3 pt-3"><i class="far fa-list-alt"></i> Detalhes do pedido</span>
+           
             <div class="tabela-responsiva">
                 <div class="border-bottom-0">
                     <table cellpadding="0" cellspacing="0" id="dataTable">
@@ -75,13 +47,13 @@
                                 <th width="16%" align="center">Preço</th>
                                 <th width="8%" align="center">Quantidade</th>							
                                 <th width="15%" align="center">Subtotal</th>
-                                <th width="15%" align="center">Excluir</th>
                             </tr>
                         </thead>
                         <tbody id="lista_itens">
                             <?php
+                            $total_pedido = 0;
                             foreach ($itens as $item) {
-                                $total_entrada += $item->subtotal;
+                                $total_pedido += $item->subtotal;
                                 ?>
                                 <tr class="ativo">
                                     <td><?= $item->id_item ?></td>
@@ -89,19 +61,13 @@
                                     <td align="center"><?= moedaBr($item->valor) ?></td>
                                     <td align="center"><?= $item->qtde ?></td>
                                     <td align="center"><?= moedaBr($item->subtotal) ?></td>
-                                    <td align="center"><a href="javascript:;" onclick="return excluir_item(this)" data-entidade="item" data-id="<?= $item->id_item ?>" class="btn btn-outline-vermelho">Excluir</a></td>
                                 </tr>
                             <?php } ?>
-                            <tr><td align="right" colspan="6" ><b>Total:</b> R$ <?= $total_entrada ?></span></td> </tr>
+                            <tr><td align="right" colspan="5" ><b>Total:</b> R$ <?= moedaBr($total_pedido) ?></span></td> </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="text-right pt-3 base-botoes">
-                <a href="" class="btn btn-vermelho d-inline-block"><i class="fas fa-times"></i> Cancelar</a>
-                <a href="" class="btn d-inline-block"><i class="fas fa-check"></i> Finalizar</a>
-            </div>
         </div>
     </div>
 </div>
-<script> var id_pedido = "<?= $pedido->id_pedido ?>";</script>

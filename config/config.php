@@ -10,10 +10,10 @@
  */
 
 #Define tipo de Acesso    
-define('ACESSO', $_SERVER['HTTP_HOST'] == 'www.pedidos.com.br' ? "local" : "remoto");
+define('ACESSO', $_SERVER['HTTP_HOST'] == 'www.pedidos.com.br' ? "remoto" : "local");
 
 #Arquivos diretórios raízes
-$PastaLocal = "/";   //#Adicionar '/' no inicio e fim
+$PastaLocal = "/agora_pedidos/";   //#Adicionar '/' no inicio e fim
 $PastaRemota = "/"; //#Adicionar '/' no inicio e fim
 
 if (ACESSO == "local") {

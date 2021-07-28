@@ -17,4 +17,17 @@ class PedidoDao extends Model{
         return $this->select($this->db, $sql, false);
                 
     }
+    
+    public function filtro($filtro) {
+        $sql = "SELECT * FROM pedido ";
+        if($filtro->data1){
+            if($filtro->data2){
+                $sql .= "WHERE data BETWEEN '$filtro->data1' AND '$filtro->data2'";
+            }else{
+                $sql .= "WHERE data = '$filtro->data1'";
+            }
+        }
+        return $this->select($this->db, $sql);
+                
+    }
 }

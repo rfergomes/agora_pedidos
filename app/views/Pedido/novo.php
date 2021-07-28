@@ -80,8 +80,9 @@
                         </thead>
                         <tbody id="lista_itens">
                             <?php
+                            $total_pedido = 0;
                             foreach ($itens as $item) {
-                                $total_entrada += $item->subtotal;
+                                $total_pedido += $item->subtotal;
                                 ?>
                                 <tr class="ativo">
                                     <td><?= $item->id_item ?></td>
@@ -92,14 +93,14 @@
                                     <td align="center"><a href="javascript:;" onclick="return excluir_item(this)" data-entidade="item" data-id="<?= $item->id_item ?>" class="btn btn-outline-vermelho">Excluir</a></td>
                                 </tr>
                             <?php } ?>
-                            <tr><td align="right" colspan="6" ><b>Total:</b> R$ <?= $total_entrada ?></span></td> </tr>
+                            <tr><td align="right" colspan="6" ><b>Total:</b> R$ <?= moedaBr($total_pedido) ?></span></td> </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="text-right pt-3 base-botoes">
-                <a href="" class="btn btn-vermelho d-inline-block"><i class="fas fa-times"></i> Cancelar</a>
-                <a href="" class="btn d-inline-block"><i class="fas fa-check"></i> Finalizar</a>
+                <a href="<?= URL_BASE . "pedido/cancelar/" . $pedido->id_pedido ?>" class="btn btn-vermelho d-inline-block"><i class="fas fa-times"></i> Cancelar</a>
+                <a href="<?= URL_BASE . "pedido/finalizar/" . $pedido->id_pedido ?>" class="btn d-inline-block"><i class="fas fa-check"></i> Finalizar</a>
             </div>
         </div>
     </div>

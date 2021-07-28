@@ -21,5 +21,10 @@ class PedidoService {
         $soma = Service::getSoma("item", "subtotal", "id_pedido", $id_pedido);
         Service::editar(["total_pedido" => $soma, "id_pedido" => $id_pedido], "id_pedido", "pedido");
     }
+    
+    public static function filtro($filtro) {
+        $dao = new PedidoDao();
+        return $dao->filtro($filtro);
+    }
 
 }

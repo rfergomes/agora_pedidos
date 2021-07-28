@@ -26,8 +26,8 @@ class ItemController extends Controller{
         $item->id_item      = $_POST["id_item"];
         $item->id_pedido    = $_POST['id_pedido'];
         $item->id_produto   = $_POST['id_produto'];
-        $item->qtde         = ($_POST['qtde']) ? $_POST['qtde'] : null;
-        $item->valor        = ($_POST['valor']) ? $_POST['valor'] : null;
+        $item->qtde         = $_POST['qtde'];
+        $item->valor        = $_POST['valor'];
         $item->subtotal     = $item->qtde * $item->valor;
    
         Flash::setForm($item);
